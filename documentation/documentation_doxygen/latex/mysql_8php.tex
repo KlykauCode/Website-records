@@ -1,0 +1,236 @@
+\doxysection{C\+:/xampp/htdocs/websemest/mysql/mysql.php File Reference}
+\hypertarget{mysql_8php}{}\label{mysql_8php}\index{C:/xampp/htdocs/websemest/mysql/mysql.php@{C:/xampp/htdocs/websemest/mysql/mysql.php}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mysql_8php_a346f4774f29e17e14e9b39fa9e2165e3}{Connection}} ()
+\item 
+\mbox{\hyperlink{mysql_8php_a2cc6479d3ab4588b7ddc15bd82867c7e}{update\+User\+Profile}} (\$username, \$new\+Username, \$new\+Password)
+\item 
+\mbox{\hyperlink{mysql_8php_ad91adc5d2d18752991a73e6140367c51}{is\+Password\+Valid}} (\$password)
+\item 
+\mbox{\hyperlink{mysql_8php_a901a3cc4157ce07fbd6036cc27b6fab9}{Add\+Fun}} ()
+\item 
+\mbox{\hyperlink{mysql_8php_a8db48c2902872da0ee80463db6696375}{Login}} ()
+\item 
+\mbox{\hyperlink{mysql_8php_a86f23c12db745a809fe46875e788db55}{Check\+User}} (\$username)
+\item 
+\mbox{\hyperlink{mysql_8php_acca0feefde40994e020a66de58f04772}{Get\+Username}} (\$username)
+\item 
+\mbox{\hyperlink{mysql_8php_a32525561ff23fd027c50f0455ec98efe}{execute\+Query}} (\$connection, \$query, \$params)
+\item 
+\mbox{\hyperlink{mysql_8php_aa267270aec19705b1f07e20fa75f4498}{has\+User\+Already\+Reserved}} (\$username)
+\item 
+\mbox{\hyperlink{mysql_8php_a9bc728cd314397140fb50f2e2e4cf661}{reserve\+Date\+For\+User}} (\$username, \$date)
+\item 
+\mbox{\hyperlink{mysql_8php_a0d6771d03b05e1a23cda0c2e370fde6c}{is\+Reservation\+Date\+Available}} (\$date)
+\item 
+\mbox{\hyperlink{mysql_8php_ac6211fe086d7fdcf33b8c8ae5046c9b3}{get\+Total\+Rows}} (\$connection)
+\item 
+\mbox{\hyperlink{mysql_8php_aa1756cadaf87ba7ef0f2e4d0d7d86707}{get\+Paginated\+Data}} (\$connection, \$start\+Offset, \$items\+Per\+Page)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mysql_8php_a901a3cc4157ce07fbd6036cc27b6fab9}\label{mysql_8php_a901a3cc4157ce07fbd6036cc27b6fab9} 
+\index{mysql.php@{mysql.php}!AddFun@{AddFun}}
+\index{AddFun@{AddFun}!mysql.php@{mysql.php}}
+\doxysubsubsection{\texorpdfstring{AddFun()}{AddFun()}}
+{\footnotesize\ttfamily Add\+Fun (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Adds a user to the database after performing validations. Validates username, password and confirms password, then adds the user to the database if all validations pass. Redirects to login page upon successful addition.
+
+\begin{DoxyReturn}{Returns}
+string Returns the username if an error occurs, otherwise returns an empty string. 
+\end{DoxyReturn}
+\Hypertarget{mysql_8php_a86f23c12db745a809fe46875e788db55}\label{mysql_8php_a86f23c12db745a809fe46875e788db55} 
+\index{mysql.php@{mysql.php}!CheckUser@{CheckUser}}
+\index{CheckUser@{CheckUser}!mysql.php@{mysql.php}}
+\doxysubsubsection{\texorpdfstring{CheckUser()}{CheckUser()}}
+{\footnotesize\ttfamily Check\+User (\begin{DoxyParamCaption}\item[{}]{\$username }\end{DoxyParamCaption})}
+
+Checks if a username already exists in the database.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$username} & The username to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns true if the username exists, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{mysql_8php_a346f4774f29e17e14e9b39fa9e2165e3}\label{mysql_8php_a346f4774f29e17e14e9b39fa9e2165e3} 
+\index{mysql.php@{mysql.php}!Connection@{Connection}}
+\index{Connection@{Connection}!mysql.php@{mysql.php}}
+\doxysubsubsection{\texorpdfstring{Connection()}{Connection()}}
+{\footnotesize\ttfamily Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Establishes a connection to the database. Utilizes global variables for connection parameters and creates a mysqli connection. Outputs an error message and exits if the connection fails. \Hypertarget{mysql_8php_a32525561ff23fd027c50f0455ec98efe}\label{mysql_8php_a32525561ff23fd027c50f0455ec98efe} 
+\index{mysql.php@{mysql.php}!executeQuery@{executeQuery}}
+\index{executeQuery@{executeQuery}!mysql.php@{mysql.php}}
+\doxysubsubsection{\texorpdfstring{executeQuery()}{executeQuery()}}
+{\footnotesize\ttfamily execute\+Query (\begin{DoxyParamCaption}\item[{}]{\$connection,  }\item[{}]{\$query,  }\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Executes a prepared query with the provided parameters.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mysqli & {\em \$connection} & The database connection object. \\
+\hline
+string & {\em \$query} & The SQL query to be executed. \\
+\hline
+array & {\em \$params} & An array of parameters for the prepared statement. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mysqli\+\_\+stmt Returns the prepared statement object. 
+\end{DoxyReturn}
+\Hypertarget{mysql_8php_aa1756cadaf87ba7ef0f2e4d0d7d86707}\label{mysql_8php_aa1756cadaf87ba7ef0f2e4d0d7d86707} 
+\index{mysql.php@{mysql.php}!getPaginatedData@{getPaginatedData}}
+\index{getPaginatedData@{getPaginatedData}!mysql.php@{mysql.php}}
+\doxysubsubsection{\texorpdfstring{getPaginatedData()}{getPaginatedData()}}
+{\footnotesize\ttfamily get\+Paginated\+Data (\begin{DoxyParamCaption}\item[{}]{\$connection,  }\item[{}]{\$start\+Offset,  }\item[{}]{\$items\+Per\+Page }\end{DoxyParamCaption})}
+
+Retrieves paginated data from the \textquotesingle{}packages\textquotesingle{} table.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mysqli & {\em \$connection} & The database connection object. \\
+\hline
+int & {\em \$start\+Offset} & The offset to start fetching rows from. \\
+\hline
+int & {\em \$items\+Per\+Page} & The number of items to fetch. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mysqli\+\_\+result Returns the result set of the executed query. 
+\end{DoxyReturn}
+\Hypertarget{mysql_8php_ac6211fe086d7fdcf33b8c8ae5046c9b3}\label{mysql_8php_ac6211fe086d7fdcf33b8c8ae5046c9b3} 
+\index{mysql.php@{mysql.php}!getTotalRows@{getTotalRows}}
+\index{getTotalRows@{getTotalRows}!mysql.php@{mysql.php}}
+\doxysubsubsection{\texorpdfstring{getTotalRows()}{getTotalRows()}}
+{\footnotesize\ttfamily get\+Total\+Rows (\begin{DoxyParamCaption}\item[{}]{\$connection }\end{DoxyParamCaption})}
+
+Gets the total number of rows in the \textquotesingle{}packages\textquotesingle{} table.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mysqli & {\em \$connection} & The database connection object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns the total number of rows. 
+\end{DoxyReturn}
+\Hypertarget{mysql_8php_acca0feefde40994e020a66de58f04772}\label{mysql_8php_acca0feefde40994e020a66de58f04772} 
+\index{mysql.php@{mysql.php}!GetUsername@{GetUsername}}
+\index{GetUsername@{GetUsername}!mysql.php@{mysql.php}}
+\doxysubsubsection{\texorpdfstring{GetUsername()}{GetUsername()}}
+{\footnotesize\ttfamily Get\+Username (\begin{DoxyParamCaption}\item[{}]{\$username }\end{DoxyParamCaption})}
+
+Retrieves user data based on username.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$username} & The username for which to retrieve data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Returns an associative array of user data. 
+\end{DoxyReturn}
+\Hypertarget{mysql_8php_aa267270aec19705b1f07e20fa75f4498}\label{mysql_8php_aa267270aec19705b1f07e20fa75f4498} 
+\index{mysql.php@{mysql.php}!hasUserAlreadyReserved@{hasUserAlreadyReserved}}
+\index{hasUserAlreadyReserved@{hasUserAlreadyReserved}!mysql.php@{mysql.php}}
+\doxysubsubsection{\texorpdfstring{hasUserAlreadyReserved()}{hasUserAlreadyReserved()}}
+{\footnotesize\ttfamily has\+User\+Already\+Reserved (\begin{DoxyParamCaption}\item[{}]{\$username }\end{DoxyParamCaption})}
+
+Checks if the user has already made a reservation.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$username} & The username to check for a reservation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns true if the user has a reservation, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{mysql_8php_ad91adc5d2d18752991a73e6140367c51}\label{mysql_8php_ad91adc5d2d18752991a73e6140367c51} 
+\index{mysql.php@{mysql.php}!isPasswordValid@{isPasswordValid}}
+\index{isPasswordValid@{isPasswordValid}!mysql.php@{mysql.php}}
+\doxysubsubsection{\texorpdfstring{isPasswordValid()}{isPasswordValid()}}
+{\footnotesize\ttfamily is\+Password\+Valid (\begin{DoxyParamCaption}\item[{}]{\$password }\end{DoxyParamCaption})}
+
+Checks if the provided password meets the minimum security requirements.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$password} & The password to be validated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns true if the password is valid, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{mysql_8php_a0d6771d03b05e1a23cda0c2e370fde6c}\label{mysql_8php_a0d6771d03b05e1a23cda0c2e370fde6c} 
+\index{mysql.php@{mysql.php}!isReservationDateAvailable@{isReservationDateAvailable}}
+\index{isReservationDateAvailable@{isReservationDateAvailable}!mysql.php@{mysql.php}}
+\doxysubsubsection{\texorpdfstring{isReservationDateAvailable()}{isReservationDateAvailable()}}
+{\footnotesize\ttfamily is\+Reservation\+Date\+Available (\begin{DoxyParamCaption}\item[{}]{\$date }\end{DoxyParamCaption})}
+
+Checks if a reservation date is available.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$date} & The date to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns true if the date is available, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{mysql_8php_a8db48c2902872da0ee80463db6696375}\label{mysql_8php_a8db48c2902872da0ee80463db6696375} 
+\index{mysql.php@{mysql.php}!Login@{Login}}
+\index{Login@{Login}!mysql.php@{mysql.php}}
+\doxysubsubsection{\texorpdfstring{Login()}{Login()}}
+{\footnotesize\ttfamily Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Handles user login. Validates user credentials, starts a session, and redirects to the index page if successful.
+
+\begin{DoxyReturn}{Returns}
+string Returns the username if an error occurs, otherwise returns an empty string. 
+\end{DoxyReturn}
+\Hypertarget{mysql_8php_a9bc728cd314397140fb50f2e2e4cf661}\label{mysql_8php_a9bc728cd314397140fb50f2e2e4cf661} 
+\index{mysql.php@{mysql.php}!reserveDateForUser@{reserveDateForUser}}
+\index{reserveDateForUser@{reserveDateForUser}!mysql.php@{mysql.php}}
+\doxysubsubsection{\texorpdfstring{reserveDateForUser()}{reserveDateForUser()}}
+{\footnotesize\ttfamily reserve\+Date\+For\+User (\begin{DoxyParamCaption}\item[{}]{\$username,  }\item[{}]{\$date }\end{DoxyParamCaption})}
+
+Reserves a date for a user.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$username} & The username for which the reservation is to be made. \\
+\hline
+string & {\em \$date} & The date to reserve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns true if the reservation was successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{mysql_8php_a2cc6479d3ab4588b7ddc15bd82867c7e}\label{mysql_8php_a2cc6479d3ab4588b7ddc15bd82867c7e} 
+\index{mysql.php@{mysql.php}!updateUserProfile@{updateUserProfile}}
+\index{updateUserProfile@{updateUserProfile}!mysql.php@{mysql.php}}
+\doxysubsubsection{\texorpdfstring{updateUserProfile()}{updateUserProfile()}}
+{\footnotesize\ttfamily update\+User\+Profile (\begin{DoxyParamCaption}\item[{}]{\$username,  }\item[{}]{\$new\+Username,  }\item[{}]{\$new\+Password }\end{DoxyParamCaption})}
+
+Updates the user\textquotesingle{}s profile in the database.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$username} & The current username. \\
+\hline
+string & {\em \$new\+Username} & The new username to be set. \\
+\hline
+string & {\em \$new\+Password} & The new password to be set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns true if the update is successful, false otherwise. 
+\end{DoxyReturn}

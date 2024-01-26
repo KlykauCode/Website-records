@@ -1,0 +1,88 @@
+\doxysection{C\+:/xampp/htdocs/websemest/prices.php File Reference}
+\hypertarget{prices_8php}{}\label{prices_8php}\index{C:/xampp/htdocs/websemest/prices.php@{C:/xampp/htdocs/websemest/prices.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+global \mbox{\hyperlink{prices_8php_a94f5dbc7446e0047f5384945f87dcdd0}{\$connection}}
+\item 
+\mbox{\hyperlink{prices_8php_a12a028ce00879e8088b03511538cb399}{\$items\+Per\+Page}} = 4
+\item 
+\mbox{\hyperlink{prices_8php_a479fdb22d0165a0c0cecae71c6614ccc}{\$total\+Rows}} = \mbox{\hyperlink{mysql_8php_ac6211fe086d7fdcf33b8c8ae5046c9b3}{get\+Total\+Rows}}(\$connection)
+\item 
+\mbox{\hyperlink{prices_8php_a263621399c53f2952c2329ee13ad8e4e}{\$pages}} = ceil(\$total\+Rows / \$items\+Per\+Page)
+\item 
+\mbox{\hyperlink{prices_8php_af64cef3e8e7fe1dc79ff3293c12fb4cb}{\$current\+Page}} = 1
+\item 
+\mbox{\hyperlink{editprofile_8php_a287c50c43aaced07fdc377c7d76d037c}{if}}(isset(\$\+\_\+\+GET\mbox{[}"{}page-\/nr"{}\mbox{]}) \&\&is\+\_\+numeric(\$\+\_\+\+GET\mbox{[}"{}page-\/nr"{}\mbox{]})) \mbox{\hyperlink{prices_8php_a1228cb28903dccb6b323f979a2c0634a}{\$start\+Offset}} = (\$current\+Page -\/ 1) \texorpdfstring{$\ast$}{*} \$items\+Per\+Page
+\item 
+\mbox{\hyperlink{prices_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result}} = \mbox{\hyperlink{mysql_8php_aa1756cadaf87ba7ef0f2e4d0d7d86707}{get\+Paginated\+Data}}(\$connection, \$start\+Offset, \$items\+Per\+Page)
+\item 
+\mbox{\hyperlink{prices_8php_a1b05dae45f9e3f4c1fe86048550d2c5b}{endwhile}}
+\item 
+\mbox{\hyperlink{editprofile_8php_a287c50c43aaced07fdc377c7d76d037c}{if}}( \$current\+Page $>$ 1) for(\$i=1; \$i$<$=\$pages; \$i++) \mbox{\hyperlink{prices_8php_ab200556b40aeb5b65c73eddea27746df}{endfor}}
+\item 
+\mbox{\hyperlink{prices_8php_a44370360a3eb3edaaba958f06eadab18}{if}} ( \$current\+Page$<$ \$pages)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{prices_8php_a94f5dbc7446e0047f5384945f87dcdd0}\label{prices_8php_a94f5dbc7446e0047f5384945f87dcdd0} 
+\index{prices.php@{prices.php}!\$connection@{\$connection}}
+\index{\$connection@{\$connection}!prices.php@{prices.php}}
+\doxysubsubsection{\texorpdfstring{\$connection}{\$connection}}
+{\footnotesize\ttfamily global \$connection}
+
+\Hypertarget{prices_8php_af64cef3e8e7fe1dc79ff3293c12fb4cb}\label{prices_8php_af64cef3e8e7fe1dc79ff3293c12fb4cb} 
+\index{prices.php@{prices.php}!\$currentPage@{\$currentPage}}
+\index{\$currentPage@{\$currentPage}!prices.php@{prices.php}}
+\doxysubsubsection{\texorpdfstring{\$currentPage}{\$currentPage}}
+{\footnotesize\ttfamily \$current\+Page = 1}
+
+\Hypertarget{prices_8php_a12a028ce00879e8088b03511538cb399}\label{prices_8php_a12a028ce00879e8088b03511538cb399} 
+\index{prices.php@{prices.php}!\$itemsPerPage@{\$itemsPerPage}}
+\index{\$itemsPerPage@{\$itemsPerPage}!prices.php@{prices.php}}
+\doxysubsubsection{\texorpdfstring{\$itemsPerPage}{\$itemsPerPage}}
+{\footnotesize\ttfamily \$items\+Per\+Page = 4}
+
+\Hypertarget{prices_8php_a263621399c53f2952c2329ee13ad8e4e}\label{prices_8php_a263621399c53f2952c2329ee13ad8e4e} 
+\index{prices.php@{prices.php}!\$pages@{\$pages}}
+\index{\$pages@{\$pages}!prices.php@{prices.php}}
+\doxysubsubsection{\texorpdfstring{\$pages}{\$pages}}
+{\footnotesize\ttfamily \$pages = ceil(\$total\+Rows / \$items\+Per\+Page)}
+
+\Hypertarget{prices_8php_a112ef069ddc0454086e3d1e6d8d55d07}\label{prices_8php_a112ef069ddc0454086e3d1e6d8d55d07} 
+\index{prices.php@{prices.php}!\$result@{\$result}}
+\index{\$result@{\$result}!prices.php@{prices.php}}
+\doxysubsubsection{\texorpdfstring{\$result}{\$result}}
+{\footnotesize\ttfamily \$result = \mbox{\hyperlink{mysql_8php_aa1756cadaf87ba7ef0f2e4d0d7d86707}{get\+Paginated\+Data}}(\$connection, \$start\+Offset, \$items\+Per\+Page)}
+
+\Hypertarget{prices_8php_a1228cb28903dccb6b323f979a2c0634a}\label{prices_8php_a1228cb28903dccb6b323f979a2c0634a} 
+\index{prices.php@{prices.php}!\$startOffset@{\$startOffset}}
+\index{\$startOffset@{\$startOffset}!prices.php@{prices.php}}
+\doxysubsubsection{\texorpdfstring{\$startOffset}{\$startOffset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{editprofile_8php_a287c50c43aaced07fdc377c7d76d037c}{if}} (isset( \$\+\_\+\+GET\mbox{[}"{}page-\/nr"{}\mbox{]}) \&\&is\+\_\+numeric( \$\+\_\+\+GET\mbox{[}"{}page-\/nr"{}\mbox{]})) \$start\+Offset = (\$current\+Page -\/ 1) \texorpdfstring{$\ast$}{*} \$items\+Per\+Page}
+
+\Hypertarget{prices_8php_a479fdb22d0165a0c0cecae71c6614ccc}\label{prices_8php_a479fdb22d0165a0c0cecae71c6614ccc} 
+\index{prices.php@{prices.php}!\$totalRows@{\$totalRows}}
+\index{\$totalRows@{\$totalRows}!prices.php@{prices.php}}
+\doxysubsubsection{\texorpdfstring{\$totalRows}{\$totalRows}}
+{\footnotesize\ttfamily \$total\+Rows = \mbox{\hyperlink{mysql_8php_ac6211fe086d7fdcf33b8c8ae5046c9b3}{get\+Total\+Rows}}(\$connection)}
+
+\Hypertarget{prices_8php_ab200556b40aeb5b65c73eddea27746df}\label{prices_8php_ab200556b40aeb5b65c73eddea27746df} 
+\index{prices.php@{prices.php}!endfor@{endfor}}
+\index{endfor@{endfor}!prices.php@{prices.php}}
+\doxysubsubsection{\texorpdfstring{endfor}{endfor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{editprofile_8php_a287c50c43aaced07fdc377c7d76d037c}{if}}(\$current\+Page $>$ 1) for ( \$i=1;\$i$<$=\$pages;\$i++) endfor}
+
+\Hypertarget{prices_8php_a1b05dae45f9e3f4c1fe86048550d2c5b}\label{prices_8php_a1b05dae45f9e3f4c1fe86048550d2c5b} 
+\index{prices.php@{prices.php}!endwhile@{endwhile}}
+\index{endwhile@{endwhile}!prices.php@{prices.php}}
+\doxysubsubsection{\texorpdfstring{endwhile}{endwhile}}
+{\footnotesize\ttfamily endwhile}
+
+\Hypertarget{prices_8php_a44370360a3eb3edaaba958f06eadab18}\label{prices_8php_a44370360a3eb3edaaba958f06eadab18} 
+\index{prices.php@{prices.php}!if@{if}}
+\index{if@{if}!prices.php@{prices.php}}
+\doxysubsubsection{\texorpdfstring{if}{if}}
+{\footnotesize\ttfamily if(\$current\+Page$<$ \$pages) (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

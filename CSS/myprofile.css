@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+#editReservationForm {
+    display: none;
+}
+
+.avatar-frame {
+    margin: 10px;
+    width: 250px;
+    height: 250px;
+    border: 2px solid #74747498; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url('../Assets/default-avatar-profile.jpg');
+}
+
+.avatar-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    overflow-x: hidden;
+}
+.myprofile {
+    max-width: 1920px; 
+    margin: 0 auto;
+    padding: 30px; 
+    padding-top: 58px;
+    min-height: 100vh; 
+}
+.profile_background{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('../Assets/portbg1.jpg');
+    background-size: cover;
+    padding: 20px;
+    /* border-radius: 20px; */
+    margin-bottom: 10px;
+}
+h1 {
+    color: #ffffff;
+    position: relative;
+    padding-bottom: 10px;
+    padding: 10px;
+}
+h1::after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 5px auto;
+    position: absolute;
+}
+
+a {
+    text-decoration: none;
+}
+
+.avatar-frame {
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    margin: 10px;
+}
+
+.edit-button, #editReservationButton, #updateReservationButton, #uploadButton {
+    background-color: #737373;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.edit-button:hover, #editReservationButton:hover, #updateReservationButton:hover, #uploadButton:hover {
+    background-color: #363636;
+}
+
+#editReservationForm, #uploadForm {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+}
+
+input[type="date"], input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+#editMessage, #uploadStatus {
+    color: #ff3434;
+    margin-top: 15px;
+}
+
+.footer_container{
+    margin-bottom: 0;
+    background: linear-gradient(to bottom, #f4f4f4, rgb(115, 115, 115));
+    width: 100%;
+}
+.social{
+    display: flex;
+    justify-content: center;
+}
+.social a{
+    text-decoration: none;
+    padding: 20px;
+}
+.social a i{
+    font-size: 30px;
+    color: black;
+}
+.footer_nav{
+    display: flex;
+    justify-content: center;
+}
+.footer_nav a{
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 0.7;
+    transition: .2s linear;
+}
+.footer_nav a:hover{
+    opacity: 1;
+}
+.footer_bottom{
+    text-align: center;
+}
+.footer_bottom p{
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    opacity: 0.5;
+}
+
+header{
+    background: rgba(0, 0, 0, 0.804);
+    width: 100%;
+    padding: 5px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.container{
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+.header_inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header_inner h2{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  .header_inner a{
+    text-decoration: none;
+  }
+  nav{
+    font-size: 17px;
+    text-transform: uppercase;
+  
+  }
+  nav a{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 4px;
+    position: relative;
+    color:#ffffff;
+    text-decoration: none;
+    transition: color .2s linear;
+  }
+  nav a::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    opacity: 0;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    background-color: #ffffff;
+    position: absolute;
+    transition: opacity .2s linear;
+  }
+  nav a:hover {
+    color: darkgray;
+  }
+  nav a:hover::after {
+   opacity: 1;
+  }
+
+@media (max-width: 768px) {
+    nav a{
+        display: none;
+    }
+    nav a.sign_in, nav a.profile {
+        display: inline-block;
+    }
+    h1 {
+        color: #000000;
+        padding-bottom: 15px;
+        padding: 10px;
+    }
+    h1::after {
+        width: 115px;
+        height: 2px;
+        background-color: #000000;
+        margin: 5px auto;
+    }
+    p{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: none;
+        font-size: 16px;
+    }
+
+    .avatar-frame {
+        width: 200px; 
+        height: 200px;
+    }
+    .profile_background{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: none;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .myprofile {
+        min-height: 90vh;
+        padding: 48px; 
+    }
+    h1 {
+        font-size: 24px;
+    }
+    #editReservationButton{
+        display: none;
+    }
+    .edit-button, #updateReservationButton, #uploadButton {
+        padding: 8px 15px;
+        font-size: 14px;
+        width: 200px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    input[type="date"], input[type="file"] {
+        padding: 8px;
+        font-size: 16px; 
+    }
+    .header_inner h2 {
+        font-size: 24px;
+    }
+    nav {
+        font-size: 15px;
+    }
+    .footer_nav a{
+        font-size: 15px;
+    }
+    .section_price {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .price_item {
+        width: 90%;
+        margin-bottom: 20px; 
+    }
+    #editReservationForm{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #uploadForm{
+        margin-top: 20px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media print {
+    nav a{
+        display: none !important;
+    }
+    h1 {
+        color: #000000 !important;
+        padding-bottom: 15px !important;
+        padding: 10px !important;
+    }
+    h1::after {
+        width: 115px !important;
+        height: 2px !important;
+        background-color: #000000 !important;
+        margin: 5px auto !important;
+    }
+
+    .avatar-frame {
+        width: 200px !important;
+        height: 200px !important;
+    }
+    .profile_background{
+        background-image: none !important;
+    }
+    .buttons{
+        display: none !important;
+    }
+    .myprofile {
+        min-height: 90vh !important;
+        padding: 48px !important;
+    }
+    h1 {
+        font-size: 24px !important;
+    }
+    #editReservationButton{
+        display: none !important;
+    }
+    .edit-button, #updateReservationButton, #uploadButton {
+        display: none !important;
+    }
+    input[type="date"], input[type="file"] {
+        padding: 8px !important;
+        font-size: 16px !important;
+    }
+    .footer_nav a{
+        display: none !important;
+    }
+    .footer_container,.social,.social a,.social a i,.footer_nav a,.footer_bottom p{
+        display: none !important;
+    }
+}
